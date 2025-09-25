@@ -93,4 +93,19 @@ describe('Teste de automação completa', () => {
       ano: '2030'
     })
   })
+    it('deve realizar o login com sucesso', () => {
+        cy.request({
+            method:'POST',
+            form:true,
+            url:'https://automationexercise.com/api/verifyLogin',
+            body:{          
+                
+               email:'blay1758738723181@mail.com',                                                                 ///O método que encontrei para testar minha API vai ser mais complicado por causa do login,
+               password:'blayblade123'                                                                             ///já que estou gerando o email de forma aleatória. Agora, toda vez, terei que olhar no teste
+            }                                                                                                      ///descobrir qual email usar na API. A password sempre vai ser a mesma.                                                                                                                             
+        }).then((res) => {
+            expect(res.status).to.eq(200);
+            expect(res.body).to.contain('User exists!');
+  });
+});
 })
