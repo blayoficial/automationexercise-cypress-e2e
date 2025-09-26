@@ -93,7 +93,7 @@ describe('Teste de automação completa', () => {
       ano: '2030'
     })
   })
-  it('deve tentar cadastrar um usuário', () => {
+  it('deve tentar cadastrar um usuário com API', () => {
   cy.request({
     method: 'POST',
     form:true,
